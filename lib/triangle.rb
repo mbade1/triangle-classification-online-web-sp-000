@@ -21,6 +21,7 @@ class Triangle
     elsif (@side1 != @side2) && (@side2 != @side3)
       return :scalene
     end
+  end
 
   class TriangleError < StandardError
     "The lengths of 2 sides are shorter than 1 side of the triangle, or one of your sides has a negative input."
