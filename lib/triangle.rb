@@ -23,7 +23,7 @@ class Triangle
     end
   end
 
-  class TriangleError < StandardError
+  class TriangleError < NameError
     "The lengths of 2 sides are shorter than 1 side of the triangle, or one of your sides has a negative input."
   end
 
