@@ -1,30 +1,29 @@
 class Triangle
-  # write code here
-  attr_accessor :side1, :side2, :side3
-  def initialize(side1, side2, side3)
-    @side1 = side1
-    @side2 = side2
-    @side3 = side3
+  def initialize(side_1,side_2,side_3)
+    @side_1 = side_1
+    @side_2 = side_2
+    @side_3 = side_3
   end
 
-  def kind
-    if (@side1 <= 0 || @side2 <= 0 || @side3 <= 0)
+  def kind()
+    if (@side_1 <= 0) || (@side_2 <= 0) || (@side_3 <= 0)
       raise TriangleError
-    elsif (@side1 + @side2 <= @side3) || (@side1 + @side3 <= @side2) || (@side2 + @side3 <= @side1)
-      raise Triangle error
+    elsif (@side_1+@side_2 <= @side_3) || (@side_1+@side_3 <= @side_2) || (@side_2+@side_3 <= @side_1)
+      raise TriangleError
     else
-      if (@side1 == @side2) && (@side2 == @side3)
-        return :equilateral
-      elsif (@side1 == @side2) || (@side2 == @side3) || (@side1 == @side3)
-        return :isosceles
-      elsif (@side1 != @side2) && (@side2 != @side3)
-        return :scalene
+      if (@side_1 == @side_2) && (@side_2 == @side_3)
+        :equilateral
+      elsif (@side_1 == @side_2) || (@side_2 == @side_3) || (@side_1 == @side_3)
+        :isosceles
+      elsif (@side_1 != @side_2) && (@side_2 != @side_3) && (@side_1 != @side_3)
+        :scalene
       end
     end
+
   end
 
-  class TriangleError < NameError
-    "The lengths of 2 sides are shorter than 1 side of the triangle, or one of your sides has a negative input."
-  end
+end
 
+class TriangleError < StandardError
+  # triangle error code
 end
