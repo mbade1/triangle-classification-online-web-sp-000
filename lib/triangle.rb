@@ -17,7 +17,7 @@ class Triangle
         puts error.message
       end
     end
-    if 
+    if
     elsif (@side1 == @side2) || (@side2 == @side3) || (@side1 == @side3)
       return :isosceles
     elsif (@side1 == @side2) && (@side2 == @side3)
@@ -26,5 +26,5 @@ class Triangle
       return :scalene
     end
   end
-      
+
 end
